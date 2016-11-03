@@ -22,22 +22,23 @@ var metalsmith = new Metalsmith(__dirname)
     })
     .use(collection({
 	pages: {
-	    pattern: "content/pages/*.md"
+	    pattern: "pages/*.md"
 	},
 	blog: {
-	    pattern: "content/blog/*.md",
+	    pattern: "blog/*.md",
 	    sortBy: "date",
 	    reverse: true
 	},
 	reviews: {
-	    pattern: "content/reviews/*.md"
+	    pattern: "reviews/*.md"
 	},
 	links: {
-	    pattern: "content/links/*.md"
+	    pattern: "links/*.md"
 	}}))
     .use(markdown())
     .use(layouts(layoutOptions))
     .use(permalink({
+	relative: false,
 	pattern: ':title',
 	linksets: [{
 	    match: { collection: 'blog' },
