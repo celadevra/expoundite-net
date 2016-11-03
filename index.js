@@ -52,7 +52,7 @@ var metalsmith = new Metalsmith(__dirname)
 	    pattern: 'blog/:date/:title'
 	},{
 	    match: { collection: 'reviews' },
-	    pattern: 'reviews/:title'
+	    pattern: 'reviews/:alttitle'
 	},{
 	    match: { collection: 'links' },
 	    pattern: 'links/:title'

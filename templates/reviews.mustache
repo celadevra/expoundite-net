@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+{{> header}}
+  <body>
+    <h2 class="title">{{ title }}</h2>
+    <article>
+      {{{ contents }}}
+    </article>
+  </body>
+  {{#doubanId}}
+    <!-- script to display the item in question -->
+  {{/doubanId}}
+</html>
