@@ -17,6 +17,9 @@ var layoutOptions = {
 }
 
 var metalsmith = new Metalsmith(__dirname)
+    .metadata({
+	author: '徐栖'
+    })
     .use(collection({
 	pages: {
 	    pattern: "content/pages/*.md"
