@@ -1,5 +1,6 @@
 ---
 title: AI, VR, and the future of space exploration
+alttitle: AI, VR, and the future of space exploration
 date: 2016-03-11
 layout: pages.mustache
 ---

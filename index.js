@@ -58,7 +58,7 @@ var metalsmith = new Metalsmith(__dirname)
 	    pattern: 'links/:title'
 	},{
 	    match: { collection: 'pages' },
-	    pattern: ':title'}]}))
+	    pattern: ':alttitle'}]}))
     .destination('./build')
     .build(err)
 
