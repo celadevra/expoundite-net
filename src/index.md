@@ -22,3 +22,5 @@ author: 徐栖
 [Dotfile Management and Documentation with Org-Mode](/dotfile-management)
 
 [GPG 应用指南](/gpg-intro)
+
+[Getting started with ... Statistics](/getting-started-with-stats)
