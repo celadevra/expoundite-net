@@ -11,5 +11,9 @@
     "metalsmith"
   ],
   "author": "Haoyang Xu",
-  "license": "CC-BY-3.0"
+  "license": "CC-BY-3.0",
+  "dependencies": {
+    "metalsmith": "^2.2.2",
+    "metalsmith-markdown-it": "0.0.2"
+  }
 }
