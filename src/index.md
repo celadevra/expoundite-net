@@ -12,3 +12,7 @@ author: 徐栖
 ## 论说文
 
 [AI, VR, and the future of space exploration](/ai-vr-and-the-future-of-space-exploration)
+
+[关于写小说](/on-writing-novels)
+
+[一个 blog 作者的困惑](/questioning-blog-writing)
