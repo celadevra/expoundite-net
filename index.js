@@ -1,11 +1,15 @@
 // Dependencies
 var Metalsmith = require('metalsmith'),
-    markdown = require('metalsmith-markdown-it'),
+    markdown = require('metalsmith-markdownit'),
     layouts = require('metalsmith-layouts'),
     collection = require('metalsmith-collections'),
     permalink = require('metalsmith-permalinks'),
     ignore = require('metalsmith-ignore'),
     less = require('metalsmith-less')
+
+var md = markdown('default'),
+    footnote = require('markdown-it-footnote')
+md.parser.use(footnote)
 
 // default callback on errors
 var err = function (err) { if(err) console.log(err) }
@@ -38,7 +42,7 @@ var metalsmith = new Metalsmith(__dirname)
 	links: {
 	    pattern: "links/*.md"
 	}}))
-    .use(markdown())
+    .use(md)
     .use(layouts(layoutOptions))
     .use(permalink({
 	relative: false,
