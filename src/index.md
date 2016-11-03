@@ -16,3 +16,9 @@ author: 徐栖
 [关于写小说](/on-writing-novels)
 
 [一个 blog 作者的困惑](/questioning-blog-writing)
+
+## 指南
+
+[Dotfile Management and Documentation with Org-Mode](/dotfile-management)
+
+[GPG 应用指南](/gpg-intro)

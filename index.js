@@ -8,8 +8,11 @@ var Metalsmith = require('metalsmith'),
     less = require('metalsmith-less')
 
 var md = markdown('default'),
-    footnote = require('markdown-it-footnote')
-md.parser.use(footnote)
+    footnote = require('markdown-it-footnote'),
+    sub = require('markdown-it-sub-alt'),
+    sup = require('markdown-it-sup-alt')
+
+md.parser.use(footnote, sub, sup)
 
 // default callback on errors
 var err = function (err) { if(err) console.log(err) }
