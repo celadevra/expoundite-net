@@ -3,7 +3,9 @@ var Metalsmith = require('metalsmith'),
     markdown = require('metalsmith-markdown-it'),
     layouts = require('metalsmith-layouts'),
     collection = require('metalsmith-collections'),
-    permalink = require('metalsmith-permalinks')
+    permalink = require('metalsmith-permalinks'),
+    ignore = require('metalsmith-ignore'),
+    less = require('metalsmith-less')
 
 // default callback on errors
 var err = function (err) { if(err) console.log(err) }
@@ -20,6 +22,7 @@ var metalsmith = new Metalsmith(__dirname)
     .metadata({
 	author: '徐栖'
     })
+    .use(ignore('styles/*'))
     .use(collection({
 	pages: {
 	    pattern: "pages/*.md"
@@ -53,4 +56,11 @@ var metalsmith = new Metalsmith(__dirname)
 	    match: { collection: 'pages' },
 	    pattern: ':title'}]}))
     .destination('./build')
+    .build(err)
+
+var style = new Metalsmith(__dirname)
+    .source('./src/styles/')
+    .destination('./build/assets/css')
+    .clean(false)
+    .use(less())
     .build(err)
