@@ -14,6 +14,8 @@
   "license": "CC-BY-3.0",
   "dependencies": {
     "metalsmith": "^2.2.2",
-    "metalsmith-markdown-it": "0.0.2"
+    "metalsmith-layouts": "^1.6.5",
+    "metalsmith-markdown-it": "0.0.2",
+    "mustache": "^2.2.1"
   }
 }
