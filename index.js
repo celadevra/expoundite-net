@@ -7,7 +7,8 @@ var Metalsmith = require('metalsmith'),
     ignore = require('metalsmith-ignore'),
     less = require('metalsmith-less'),
     dateFormatter = require('metalsmith-date-formatter'),
-    pagination = require('metalsmith-pagination')
+    pagination = require('metalsmith-pagination'),
+    tags = require('metalsmith-tags')
 
 var md = markdown('default', {html: true}),
     footnote = require('markdown-it-footnote'),
@@ -80,6 +81,12 @@ var metalsmith = new Metalsmith(__dirname)
 	    path:'blog-index/:page/index.html',
 	    pageMetadata: {
 		title: '博客'}}}))
+    .use(tags({
+	handle: 'tags',
+	path: 'topics/:tag.html',
+	layout: 'topic.mustache',
+	sortBy: 'date',
+	reverse: true}))
     .use(layouts(layoutOptions))
     .destination('./build')
     .build(err)
