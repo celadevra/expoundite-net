@@ -13,6 +13,9 @@
 	  </li>
 	  {{/collections.blog}}
 	</ul>
+	<span><a href="{{pagination.previous.path}}">{{pagination.previous}}</a></span>
+	<span>{{pagination.num}}</span>
+	<span><a href="{{pagination.next.path}}">{{pagination.next}}</a></span>
       </div>
     </article>
     {{> footer}}
