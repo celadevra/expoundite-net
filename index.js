@@ -5,7 +5,8 @@ var Metalsmith = require('metalsmith'),
     collection = require('metalsmith-collections'),
     permalink = require('metalsmith-permalinks'),
     ignore = require('metalsmith-ignore'),
-    less = require('metalsmith-less')
+    less = require('metalsmith-less'),
+    dateFormatter = require('metalsmith-date-formatter')
 
 var md = markdown('default'),
     footnote = require('markdown-it-footnote'),
@@ -61,6 +62,13 @@ var metalsmith = new Metalsmith(__dirname)
 	},{
 	    match: { collection: 'pages' },
 	    pattern: ':alttitle'}]}))
+    .use(dateFormatter({
+	dates: [
+	    {
+		key: "date",
+		format: "YYYY/MM/DD"
+	    }
+	]}))
     .use(layouts(layoutOptions))
     .destination('./build')
     .build(err)
