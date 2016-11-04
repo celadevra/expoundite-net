@@ -100,3 +100,8 @@ var scripts = new Metalsmith(__dirname)
     .source('./src/scripts/')
     .destination('./build/assets/js')
     .build(err)
+
+var style = new Metalsmith(__dirname)
+    .source('./src/fonts/')
+    .destination('./build/assets/fonts')
+    .build(err)
