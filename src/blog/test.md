@@ -1,0 +1,6 @@
+---
+title: Test blogging
+date: 2016-11-03
+---
+
+### This is a test
