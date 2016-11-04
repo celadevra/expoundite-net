@@ -6,7 +6,8 @@ var Metalsmith = require('metalsmith'),
     permalink = require('metalsmith-permalinks'),
     ignore = require('metalsmith-ignore'),
     less = require('metalsmith-less'),
-    dateFormatter = require('metalsmith-date-formatter')
+    dateFormatter = require('metalsmith-date-formatter'),
+    pagination = require('metalsmith-pagination')
 
 var md = markdown('default', {html: true}),
     footnote = require('markdown-it-footnote'),
@@ -73,6 +74,12 @@ var metalsmith = new Metalsmith(__dirname)
 		format: "YYYY/MM/DD"
 	    }
 	]}))
+    .use(pagination({
+	'collections.blog': {
+	    template: 'blog-index.mustache',
+	    path:'blog-index/:page/index.html',
+	    pageMetadata: {
+		title: '博客'}}}))
     .use(layouts(layoutOptions))
     .destination('./build')
     .build(err)
