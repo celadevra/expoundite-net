@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+{{> header}}
+  <body>
+    {{> nav}}
+    <article class="pure-g">
+      <h2 class="title pure-u-1 pure-u-md-3-5">{{ title }}</h2>
+      <div class="pure-u-1 pure-u-md-3-5 content">
+      {{{ contents }}}
+	<div class="tags">标签：
+	  <ul>
+	    {{#tags}}
+	    <li><a href="/topics/{{slug}}/">{{name}}</li>
+	    {{/tags}}
+	  </ul>
+      </div>
+    </article>
+    {{> footer}}
+  </body>
+</html>
