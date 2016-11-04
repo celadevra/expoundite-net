@@ -8,12 +8,16 @@ var Metalsmith = require('metalsmith'),
     less = require('metalsmith-less'),
     dateFormatter = require('metalsmith-date-formatter')
 
-var md = markdown('default'),
+var md = markdown('default', {html: true}),
     footnote = require('markdown-it-footnote'),
     sub = require('markdown-it-sub-alt'),
-    sup = require('markdown-it-sup-alt')
+    sup = require('markdown-it-sup-alt'),
+    attrs = require('markdown-it-attrs')
 
-md.parser.use(footnote, sub, sup)
+md.parser.use(footnote)
+    .use(sup)
+    .use(sub)
+    .use(attrs)
 
 // default callback on errors
 var err = function (err) { if(err) console.log(err) }
