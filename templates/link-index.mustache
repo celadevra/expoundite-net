@@ -17,6 +17,11 @@
 	      {{date}}
 	      </h3>
 	      {{{ contents }}}
+	      <ul>
+	      {{#tags}}
+		<li><a href="/topics/{{slug}}/">{{name}}</a></li>
+	      {{/tags}}
+	      </ul>
 	    </article>
 	  {{/collections.links}}
       </div>
