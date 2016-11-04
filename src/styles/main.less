@@ -1,3 +1,8 @@
+body {
+    background-color: #282828;
+    color: #EBDBB2;
+}
+
 .content {
     margin-left: auto;
     margin-right: auto;
@@ -18,6 +23,9 @@ nav {
 .article-list {
     list-style: none;
     padding: 0;
+    li {
+	height: 3em;
+    }
     .article-list-name {
 	font-size: large;
     }
@@ -26,5 +34,13 @@ nav {
 	float: right;
 	font-size: small;
 	color: #999;
+    }
+}
+
+a {
+    color: #FE8019;
+    text-decoration: none;
+    &:hover {
+	color: #AF3A03;
     }
 }
