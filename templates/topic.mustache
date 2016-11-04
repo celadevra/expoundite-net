@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+{{> header}}
+  <body>
+    {{> nav}}
+    <article class="pure-g">
+      <title class="pure-u-1 pure-u-md-3-5 content">{{tag}} 主题下的文字：</title>
+      <div class="pure-u-1 pure-u-md-3-5 content">
+	<ul class="article-list">
+	  {{#pagination.files}}
+	  <li>
+	    <span class="article-list-name"><a href="/{{path}}">{{title}}</a></span>
+	    <span class="article-list-time">{{date}}</span>
+	  </li>
+	  {{/pagination.files}}
+	</ul>
+	<span><a href="{{pagination.previous.path}}">{{pagination.previous}}</a></span>
+	<span>{{pagination.num}}</span>
+	<span><a href="{{pagination.next.path}}">{{pagination.next}}</a></span>
+      </div>
+    </article>
+    {{> footer}}
+  </body>
+</html>
