@@ -67,7 +67,8 @@ var metalsmith = new Metalsmith(__dirname)
 	    pattern: 'links/:title'
 	},{
 	    match: { collection: 'pages' },
-	    pattern: ':alttitle'}]}))
+	    pattern: ':alttitle'
+	}]}))
     .use(dateFormatter({
 	dates: [
 	    {
