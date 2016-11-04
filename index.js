@@ -46,7 +46,6 @@ var metalsmith = new Metalsmith(__dirname)
 	    pattern: "links/*.md"
 	}}))
     .use(md)
-    .use(layouts(layoutOptions))
     .use(permalink({
 	relative: false,
 	pattern: ':title',
@@ -62,6 +61,7 @@ var metalsmith = new Metalsmith(__dirname)
 	},{
 	    match: { collection: 'pages' },
 	    pattern: ':alttitle'}]}))
+    .use(layouts(layoutOptions))
     .destination('./build')
     .build(err)
 
