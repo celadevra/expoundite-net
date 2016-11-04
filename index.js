@@ -83,7 +83,7 @@ var metalsmith = new Metalsmith(__dirname)
 		title: '博客'}}}))
     .use(tags({
 	handle: 'tags',
-	path: 'topics/:tag.html',
+	path: 'topics/:tag/index.html',
 	layout: 'topic.mustache',
 	sortBy: 'date',
 	reverse: true}))
