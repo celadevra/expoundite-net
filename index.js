@@ -9,7 +9,8 @@ var Metalsmith = require('metalsmith'),
     dateFormatter = require('metalsmith-date-formatter'),
     pagination = require('metalsmith-pagination'),
     tags = require('metalsmith-tags'),
-    prismjs = require('metalsmith-prismjs')
+    prismjs = require('metalsmith-prismjs'),
+    feed = require('metalsmith-feed')
 
 var md = markdown('default', {html: true}),
     footnote = require('markdown-it-footnote'),
@@ -31,7 +32,12 @@ var layoutOptions = {
 
 var metalsmith = new Metalsmith(__dirname)
     .metadata({
-	author: '徐栖'
+	sitename: '徐栖 - 读写科幻',
+	author: '徐栖',
+	site: {
+	    title: '徐栖 - 读写科幻',
+	    url: 'https://expoundite.net'
+	}
     })
     .use(ignore('styles/*'))
     .use(collection({
@@ -73,6 +79,9 @@ var metalsmith = new Metalsmith(__dirname)
 		format: "YYYY/MM/DD"
 	    }
 	]}))
+    .use(feed({
+	collection: 'blog'
+    }))
     .use(pagination({
 	'collections.blog': {
 	    template: 'blog-index.mustache',
