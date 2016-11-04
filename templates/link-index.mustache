@@ -17,11 +17,13 @@
 		<span class="right">{{date}}</span>
 	      </h3>
 	      {{{ contents }}}
-	      <ul>
-	      {{#tags}}
-		<li><a href="/topics/{{slug}}/">{{name}}</a></li>
-	      {{/tags}}
-	      </ul>
+	      <div class="tags">
+		<ul>
+		  {{#tags}}
+		    <li><a href="/topics/{{slug}}/">{{name}}</a></li>
+		  {{/tags}}
+		</ul>
+	      </div>
 	    </article>
 	  {{/collections.links}}
       </div>
