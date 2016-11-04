@@ -8,7 +8,8 @@ var Metalsmith = require('metalsmith'),
     less = require('metalsmith-less'),
     dateFormatter = require('metalsmith-date-formatter'),
     pagination = require('metalsmith-pagination'),
-    tags = require('metalsmith-tags')
+    tags = require('metalsmith-tags'),
+    prismjs = require('metalsmith-prismjs')
 
 var md = markdown('default', {html: true}),
     footnote = require('markdown-it-footnote'),
@@ -88,6 +89,7 @@ var metalsmith = new Metalsmith(__dirname)
 	layout: 'topic.mustache',
 	sortBy: 'date',
 	reverse: true}))
+    .use(prismjs())
     .use(layouts(layoutOptions))
     .destination('./build')
     .build(err)

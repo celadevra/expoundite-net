@@ -52,7 +52,7 @@ where \\(n\\) is sample size, \\(X_{i}\\) is the score for the individual \\(i\\
 
 **In R**, the mean is calculated with
 
-``` {.r}
+``` r
 mean(x, trim = 0, na.rm = FALSE, ...)
 ```
 
@@ -71,7 +71,7 @@ the distance between values has no meaning.
 
 **In R**, the median is calculated with
 
-``` {.r}
+``` r
 median(x, na.rm = FALSE)
 ```
 
@@ -85,7 +85,7 @@ is not necessarily close to the mean.
 **In R**, you can use such a function to find mode numbers for a
 univariate sample:
 
-``` {.r}
+``` r
 Mode <- function(x) {
   ux <- unique(x)
   tab <- tabulate(match(x, ux)); ux[tab == max(tab)]
@@ -113,7 +113,7 @@ $$
 
 **In R**, the range is calculated with
 
-``` {.r}
+``` r
 range(..., na.rm = FALSE)
 ```
 
@@ -131,7 +131,7 @@ interquartile range.
 
 **In R**, the interquartile range is calculated with
 
-``` {.r}
+``` r
 # assuming continuous sample
 IQR(x, na.rm = FALSE, type = 7)
 ```
@@ -164,7 +164,7 @@ where \\(\bar{X}\\) is the sample mean, and \\(n\\) the sample size.
 
 **In R**, variance is calculated with
 
-``` {.r}
+``` r
 var(x, y = NULL, na.rm = FALSE)
 ```
 
@@ -177,7 +177,7 @@ It is simply calculated by obtaining the square root of variance.
 
 **In R**, the sample's SD is calculated with `sd` from `stats` package.
 
-``` {.r}
+``` r
 sd(x, na.rm = FALSE)
 ```
 
@@ -195,7 +195,7 @@ So, if \\(X\\) is 0.5 SD larger than the mean, its z-score is 0.5. If \\(X\\) is
 
 **In R**, z-scores can be calculated with
 
-``` {.r}
+``` r
 scale(x, center = TRUE, scale = TRUE)
 ```
 
@@ -300,7 +300,7 @@ the formula to calculate it is
 \\(t_{95}\\) and other t-values corresponding to the confidence required can
 be found by looking up a t distributions table. **In R**, you can use
 
-``` {.r}
+``` r
 qt(.95, df)
 ```
 
@@ -331,7 +331,7 @@ indicates a positive correlation.
 
 **In R**, Pearson correlation coefficient can be calculated with
 
-``` {.r}
+``` r
 cor(x, y, method = "pearson")
 ```
 
