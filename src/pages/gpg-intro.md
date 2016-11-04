@@ -457,7 +457,7 @@ $ gpg2 --detach-sign --local-user alice@example.org example.txt
 ```
 
 这样原来的 `example.txt` 不受影响，只是多了一个
-=example.txt.sig=，即为签名文件。
+`example.txt.sig`，即为签名文件。
 
 验证别人的数字签名
 ------------------
