@@ -3,6 +3,7 @@ title: GPG 应用指南
 alttitle: gpg-intro
 date: 2016-04-06
 layout: pages.mustache
+mathjax: t
 ---
 
 一些概念
@@ -57,9 +58,9 @@ OpenPGP 协议下的操作定义
 加密
 ----
 
-OpenPGP 的加密手段结合了对称式的秘钥加密和非对称的公钥加密方法。取决于第二步加密手段的不同，有两种加密流程。第一种加密流程结合基于秘钥的对称式加密， 对于每一段需要加密的信息 M，OpenPGP 使用一个随机数作为秘钥 k~M~，加密 信息得到M'，再把这个秘钥附到 M' 的开头。即每段信息 M 变为 k~M~ + M'。在发送前，OpenPGP 用接收方提供的公钥对秘钥 k~M~ 进行加密，得到最终可以发送的密文 k'~M~ + M'。第二种加密流程使用双方预先约定的密码对 k~M~ 进行加密，对 M 的加密方法则与第一种流程相同。 
+OpenPGP 的加密手段结合了对称式的秘钥加密和非对称的公钥加密方法。取决于第二步加密手段的不同，有两种加密流程。第一种加密流程结合基于秘钥的对称式加密， 对于每一段需要加密的信息 \\(M\\)，OpenPGP 使用一个随机数作为秘钥 \\(k_M\\)，加密 信息得到 \\(M'\\)，再把这个秘钥附到 \\(M'\\) 的开头。即每段信息 \\(M\\) 变为 \\(k_M + M'\\)。在发送前，OpenPGP 用接收方提供的公钥对秘钥 \\(k_M\\) 进行加密，得到最终可以发送的密文 \\(k'_M + M'\\)。第二种加密流程使用双方预先约定的密码对 \\(k_M\\) 进行加密，对 \\(M\\) 的加密方法则与第一种流程相同。 
 
-接收方收到密文之后，首先使用自己的私钥或发送方通过其他途径提供的密码解密 k'~M~ 得到秘钥 k~M~，然后使用 k~M~ 解开 M' 得到 M。
+接收方收到密文之后，首先使用自己的私钥或发送方通过其他途径提供的密码解密 \\(k'_M\\) 得到秘钥 \\(k_M\\)，然后使用 \\(k_M\\) 解开 \\(M'\\) 得到 \\(M\\)。
 
 签名
 ----
@@ -141,7 +142,7 @@ Cookbook
 生成自己的主密钥对
 ------------------
 
-``` {.bash}
+``` bash
 $ gpg2 --gen-key ↵
 gpg (GnuPG) 2.0.29; Copyright (C) 2015 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
@@ -199,7 +200,7 @@ sub   2048R/79322E0E 2015-11-12
 
 这个主密钥是用来签名验证的，我们还需要生成用于加解密的次级密钥对。
 
-``` {.example}
+``` bash
 $ gpg2 --list-keys ↵
 /Users/alice/.gnupg/pubring.gpg
 -------------------------------
@@ -211,7 +212,7 @@ sub   2048R/79322E0E 2015-11-12
 在这个例子中，主密钥对的指纹最后8位被用作它的唯一标识。我们也可以用 uid
 来告诉 GPG，我们要在哪一个主密钥下添加次级密钥对。
 
-``` {.example}
+``` bash
 $ gpg2 --edit-key 89031a01 ↵
 # 或者 gpg2 --edit-key alice@example.org
 gpg (GnuPG) 2.0.29; Copyright (C) 2015 Free Software Foundation, Inc.
@@ -269,7 +270,7 @@ Save changes? (y/N) y ↵
 
 在使用密钥对之前，还要对 uid 进行自签名。
 
-``` {.example}
+``` bash
 $ gpg2 --edit-key alice@example.org ↵
  ...
 gpg> 1 # 选择第一个 uid
@@ -278,7 +279,7 @@ gpg> sign
 
 最后，导出公钥。
 
-``` {.example}
+``` bash
 $ gpg2 --export --armor alice@example.org ↵
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2
@@ -333,7 +334,7 @@ dPL/ej+R
 一些人把上面的公钥直接贴到网站或者邮件的签名档里，这样做的一个问题是你无法确定网站或者邮件传输的途径是安全的，中间的攻击者可以把公钥修改成它自己的，从而截获加密传输的文件。比较好的办法是将公钥文本拷贝到剪贴板，然后上传到一个
 key server。或者直接用
 
-``` {.example}
+``` bash
 $ gpg2 --keyserver pgp.mit.edu --send-keys alice@example.org
 ```
 
@@ -343,7 +344,7 @@ $ gpg2 --keyserver pgp.mit.edu --send-keys alice@example.org
 
 Alice 需要提供给其他人的是她的公钥的指纹。获得指纹的命令是：
 
-``` {.example}
+``` bash
 $ gpg2 --fingerprint ↵
 /Users/snakehsu/.gnupg/pubring.gpg
 ----------------------------------
@@ -368,13 +369,13 @@ Alice 本人了。
 的公钥。如果 Alice 把输出的公钥保存为 `alice.pub` 并发送给 Bob，Bob
 可以首先导入这枚公钥：
 
-``` {.example}
+``` bash
 $ gpg2 --import alice.pub
 ```
 
 然后，他查看这个公钥的指纹：
 
-``` {.example}
+``` bash
 $ gpg2 --fingerprint alice@example.org ↵
 pub   2048R/89031A01 2015-11-12
       Key fingerprint = E2B3 74CA BD6E 26D3 1F42  882D B5EC C252 8903 1A01
@@ -386,7 +387,7 @@ sub   2048g/413C65C2 2015-11-12 [expires: 2016-11-11]
 再和 Alice 写在小纸条上亲手交给他的指纹对照，OK。那么 Bob
 在自己的电脑上输入：
 
-``` {.example}
+``` bash
 $ gpg2 --edit-key alice@example.org ↵
 ...
 gpg> sign ↵
@@ -411,7 +412,7 @@ gpg> sign ↵
 GPG
 有几种进行数字签名的方式，第一种是仅对明文信息进行签名，不进行加密操作：
 
-``` {.example}
+``` bash
 gpg2 --clearsign --local-user alice@example.org example.txt ↵
 
 You need a passphrase to unlock the secret key for
@@ -421,7 +422,7 @@ user: "Alice Somebody (alice1997) <alice@example.org>"
 
 得到的 `example.txt.asc` 是这样的形式：
 
-``` {.example}
+``` bash
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
@@ -444,15 +445,15 @@ qor4BQc9VH6NT4UbGZkl9MZN5mL8Zjn6q4WcrxLSFe3205OwR65YjsFbUmTRO4Y=
 
 第二种是密文签名操作，用来生成加密和签名过的文件，一般和加密操作结合使用。如果只签名的话，命令如下：
 
-``` {.example}
+``` bash
 $ gpg2 --sign --local-user alice@example.org example.txt
 ```
 
-结果是得到一个 =example.txt.gpg=。
+结果是得到一个 `example.txt.gpg`。
 
 第三种是分离文件本身和签名文件的签名方式：
 
-``` {.example}
+``` bash
 $ gpg2 --detach-sign --local-user alice@example.org example.txt
 ```
 
@@ -465,7 +466,7 @@ $ gpg2 --detach-sign --local-user alice@example.org example.txt
 之前 Bob 已经信任了 Alice 的公钥，那么当他收到 Alice
 的签名文件，他可以使用这个公钥来验证签名的真实性：
 
-``` {.example}
+``` bash
 $ gpg2 --decrypt example.txt.gpg ↵
 (文件内容)
 ...
@@ -473,13 +474,13 @@ gpg: Signature made Thu Nov 12 22:08:34 2015 CST using RSA key ID 89031A01
 gpg: Good signature from "Alice Somebody (alice1997) <alice@example.org>" [ultimate]
 ```
 
-``` {.example}
+``` bash
 $ gpg2 --verify example.txt.asc ↵
 gpg: Signature made Thu Nov 12 21:36:01 2015 CST using RSA key ID 89031A01
 gpg: Good signature from "Alice Somebody (alice1997) <alice@example.org>" [ultimate]
 ```
 
-``` {.example}
+``` bash
 $ gpg2 --verify example.txt.sig example.txt ↵
 gpg: Signature made Thu Nov 12 21:45:57 2015 CST using RSA key ID 89031A01
 gpg: Good signature from "Alice Somebody (alice1997) <alice@example.org>" [ultimate]
@@ -491,7 +492,7 @@ gpg: Good signature from "Alice Somebody (alice1997) <alice@example.org>" [ultim
 假设 Bob 要加密一份文件给 Alice，因为他已经有 Alice
 的公钥并签名验证了，他可以输入：
 
-``` {.example}
+``` bash
 $ gpg2 --encrypt --recipient alice@example.org example.txt
 ```
 
@@ -499,7 +500,7 @@ $ gpg2 --encrypt --recipient alice@example.org example.txt
 
 Alice 收到文件后，可以直接解密：
 
-``` {.example}
+``` bash
 $ gpg2 --decrypt -o example.txt example.txt.gpg
 ```
 
@@ -509,7 +510,7 @@ $ gpg2 --decrypt -o example.txt example.txt.gpg
 还有一种常见的情景是临时性的加密信息交换。因为各种原因，Alice 不愿意接受
 Bob 的公钥，那么 Bob 可以给她发送使用对称加密的信息：
 
-``` {.example}
+``` bash
 $ gpg2 --symmetric message.txt
 ```
 
