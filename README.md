@@ -20,9 +20,9 @@ $ npm install
 
 ``` shell
 # (optional)
-$ npm clean
+$ npm run clean
 # actual build
-$ npm build
+$ npm run build
 ```
 
 ## Deploy
