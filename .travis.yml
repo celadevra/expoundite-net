@@ -5,3 +5,6 @@ before_script:
   - npm install
 
 script: npm run build
+
+after_script:
+  - tree build/
