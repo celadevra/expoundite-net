@@ -1,0 +1,24 @@
+machine:
+  timezone: Asia/Shanghai
+  
+checkout:
+  post:
+    - if [ -d build ]; then mkdir build; fi
+    
+dependencies:
+  override:
+    - npm install
+  cache_directories:
+    "build"
+
+test:
+  override:
+    - npm run build
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - aws configure set preview.cloudfront true
+      - aws s3 sync build s3://expoundite.net/ --delete
+      - aws cloudfront create-invalidation --distribution-id E2WQV7PA6MMP54 --paths "/*"
