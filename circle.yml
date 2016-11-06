@@ -9,7 +9,7 @@ dependencies:
   override:
     - npm install
   cache_directories:
-    "build"
+    - ["build"]
 
 test:
   override:
