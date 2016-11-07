@@ -292,10 +292,12 @@ is in this range.
 This range is called 95% confidence interval or 99% confidence interval,
 the formula to calculate it is
 
+$$
 \begin{eqnarray}
      CI_{95} & = & \bar{X} \pm t_{95}S_e \\
      CI_{99} & = & \bar{X} \pm t_{99}S_e
 \end{eqnarray}
+$$
 
 \\(t_{95}\\) and other t-values corresponding to the confidence required can
 be found by looking up a t distributions table. **In R**, you can use
