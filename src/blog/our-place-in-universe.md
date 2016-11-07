@@ -1,5 +1,6 @@
 ---
 title: 我们在宇宙中的位置
+alttitle: Our place in universe
 date: 2016-11-05
 layout: blog.mustache
 tags: 'mass effect'

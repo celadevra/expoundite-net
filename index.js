@@ -61,7 +61,7 @@ var metalsmith = new Metalsmith(__dirname)
 	pattern: ':title',
 	linksets: [{
 	    match: { collection: 'blog' },
-	    pattern: 'blog/:date/:title'
+	    pattern: 'blog/:date/:alttitle'
 	},{
 	    match: { collection: 'reviews' },
 	    pattern: 'reviews/:alttitle'
