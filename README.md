@@ -1,5 +1,7 @@
 # EXPOUNDITE.NET
 
+![](https://circleci.com/gh/celadevra/expoundite-net.png?circle-token=:circle-token)
+
 https://expoundite.net
 
 Source code used to generate contents for expoundite.net. The site focuses on
