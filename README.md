@@ -27,9 +27,10 @@ $ npm run build
 
 ## Deploy
 
-Currently I am paying for a server, which is (still) the most reasonably way to
-have a custom domain and Let's Encrypt certificates. When these problems are
-solved I'd like to jump onto the serverless bandwagon.
+Each commit is submitted to Circle CI to build, which then send the result to
+Amazon S3 for storage. S3 also serves as the backend of a CloudFront
+distribution. So, each time I edit and submit something, it will appear on the
+webpage in 10~15 minutes, pretty cool, huh?
 
-Therefore at the moment I just use rsync to transfer files to the server.
-
+You will need to use your own S3 credentials if you clone the repo and want to
+host it yourself. The `circle.yml` file can be used as a starting point.
