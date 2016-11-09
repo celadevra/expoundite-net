@@ -7,7 +7,7 @@ date: 2016-11-04
 
 # 作者
 
-- [Greg Egan](http://gregegan.customer.netspace.net.au/)
+- [Greg Egan](http://gregegan.net)
 
 # 网络科幻媒体
 
