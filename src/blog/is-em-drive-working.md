@@ -1,5 +1,5 @@
 ---
-title: [据说] EmDrive 也许真的能用
+title: 【据说】 EmDrive 也许真的能用
 alttitle: is em drive working
 date: 2016-11-09
 layout: blog.mustache
