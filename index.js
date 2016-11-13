@@ -53,7 +53,9 @@ var metalsmith = new Metalsmith(__dirname)
 	    pattern: "reviews/*.md"
 	},
 	links: {
-	    pattern: "links/*.md"
+	    pattern: "links/*.md",
+	    sortBy: "date",
+	    reverse: true
 	}}))
     .use(md)
     .use(permalink({
