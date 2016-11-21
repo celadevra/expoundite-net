@@ -30,4 +30,4 @@ layout: pages.mustache
 
 ## 《[传送](/stories/transmission)》
 
-	受[这则新闻](http://www.thevintagenews.com/2016/10/31/abandoned-in-space-in-1967-a-us-satellite-has-started-transmitting-again/)启发写的故事。
+受[这则新闻](http://www.thevintagenews.com/2016/10/31/abandoned-in-space-in-1967-a-us-satellite-has-started-transmitting-again/)启发写的故事。
