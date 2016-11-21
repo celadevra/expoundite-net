@@ -2,6 +2,7 @@
 title: 作品
 date: 2016-11-04
 layout: pages.mustache
+mathjax: true
 ---
 
 # 《断路时代》
