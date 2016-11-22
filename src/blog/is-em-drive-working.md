@@ -12,7 +12,9 @@ EmDrive 在 2006 年由 Roger Shawyer [提出][ShawerPaper]，是一种射频共
 
 虽然 EmDrive 看起来非常完美，但它似乎违背了牛顿第三定律。它并不向外排放物质，因此推力像是“凭空”产生。过去已经有无数的文章指出 Shawyer 的理论的漏洞。假如这次的实验结果确实证明了 EmDrive 能产生推力，也许我们应该考虑什么样的物理过程能让它与已知的物理规律兼容。
 
+2016-11-22 更新：NASA 的报告已经于本月17日正式[发表][aiaaPaper]在 J. of Propulsion and Power 上。
+
 [NASAPaper]: https://drive.google.com/file/d/0B7kgKijo-p0ibm94VUY0TVktQlU/view
 [EMDrive]: https://en.wikipedia.org/wiki/RF_resonant_cavity_thruster
 [ShawerPaper]: https://www.newscientist.com/data/images/ns/av/shawyertheory.pdf
-
+[aiaaPaper]: http://arc.aiaa.org/doi/full/10.2514/1.B36120
