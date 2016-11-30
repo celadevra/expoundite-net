@@ -39,3 +39,7 @@ date: 2016-11-04
 - [Tor](http://publishing.tor.com)
 - [Subterranean](http://subterraneanpress.com/)
 - [Tachyon](https://tachyonpublications.com/)
+
+# 资料
+
+- [The Encyclopedia of Science Fiction](http://www.sf-encyclopedia.com/)
