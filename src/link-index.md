@@ -22,6 +22,7 @@ date: 2016-11-04
 - [SciFiNow](https://www.scifinow.co.uk/) ([RSS](https://www.scifinow.co.uk/feed/))
 - [Strange Horizons](http://www.strangehorizons.com/) ([RSS](http://strangehorizons.com/feed/))
 - [Compelling Science Fiction](http://compellingsciencefiction.com/)
+- [Sci-fi Addicts](http://scifiaddicts.com/) ([RSS](http://scifiaddicts.com/feed/))
 
 # 杂志
 
