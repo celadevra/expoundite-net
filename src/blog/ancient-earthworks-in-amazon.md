@@ -3,7 +3,7 @@ title: 亚马逊丛林中的古代人类活动
 alttitle: ancient-earthworks-in-amazon
 date: 2017-02-15
 layout: blog.mustache
-tag: amazon, archaeology
+tags: amazon, archaeology
 ---
 
 [Hundreds of ancient earthworks built in the Amazon](http://www.exeter.ac.uk/news/featurednews/title_568689_en.html)
