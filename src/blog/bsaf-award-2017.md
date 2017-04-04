@@ -2,7 +2,7 @@
 title: 2017年 BSAF 奖短名单
 alttitle: 2017-bsaf-award-shortlist
 date: 2017-02-26
-tags: scifi
+tags: scifi award
 layout: blog.mustache
 ---
 
