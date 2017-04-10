@@ -14,6 +14,7 @@ date: 2016-11-04
 - [Orson Scott Card](http://www.hatrack.com/) ([RSS](http://www.hatrack.com/feed.xml))
 - [Anthony J Melchoirri](http://anthonyjmelchiorri.com/) ([RSS](http://anthonyjmelchiorri.com/?feed=rss2))
 - [Brandon Ellis](http://brandon-ellis.com/) ([RSS](http://brandon-ellis.com/feed/))
+- [Julie Novakova](https://www.julienovakova.com/) ([RSS](https://www.julienovakova.com/feed/))
 
 # 网络科幻媒体
 
